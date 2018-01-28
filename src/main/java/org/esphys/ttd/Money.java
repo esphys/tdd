@@ -5,6 +5,7 @@ package org.esphys.ttd;
  */
 abstract class Money {
     protected int amount;
+    abstract String currency();
 
     static Dollar dollar(int amount) {
         return new Dollar(amount);
