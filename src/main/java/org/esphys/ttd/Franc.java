@@ -4,17 +4,12 @@ package org.esphys.ttd;
  * Created by Evan_2 on 2018-01-23.
  */
 public class Franc extends Money{
-    private String currency;
-    Franc(int amount){
+    Franc(int amount, String currency){
         this.amount = amount;
-        currency = "CHF";
-    }
-
-    String currency() {
-        return currency;
+        this.currency = currency;
     }
 
     Money times(int multiplier){
-        return new Franc(amount * multiplier);
+        return Money.franc(amount*multiplier);
     }
 }

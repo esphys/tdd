@@ -4,18 +4,13 @@ package org.esphys.ttd;
  * Created by Evan_2 on 2018-01-23.
  */
 public class Dollar extends Money{
-    private String currency;
-    Dollar(int amount){
+    Dollar(int amount, String currency){
         this.amount = amount;
-        currency = "USD";
-    }
-
-    String currency() {
-        return currency;
+        this.currency = currency;
     }
 
     Money times(int multiplier){
-        return new Dollar(amount * multiplier);
+        return Money.dollar(amount * multiplier);
     }
 
 }

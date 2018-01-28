@@ -5,13 +5,17 @@ package org.esphys.ttd;
  */
 abstract class Money {
     protected int amount;
-    abstract String currency();
+    protected String currency;
+
+    String currency() {
+        return currency;
+    }
 
     static Dollar dollar(int amount) {
-        return new Dollar(amount);
+        return new Dollar(amount, "USD");
     }
     static Money franc(int amount) {
-        return new Franc(amount);
+        return new Franc(amount, "CHF");
     }
 
     public boolean equals(Object object){
